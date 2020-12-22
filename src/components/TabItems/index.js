@@ -7,7 +7,7 @@ const TabItems = ({ key, onPress, onLongPress, label, isFocused }) => {
         if(label === "Home") return isFocused ? <BerandaActive /> : <Beranda />;
         if(label === "Pesanan") return isFocused ? <PesananActive /> : <Pesanan />;
         if(label === "Akun") return isFocused ? <AkunActive /> : <Akun />;
-        return <Akun />;
+        return <Beranda />;
     }
 
     return (
@@ -15,7 +15,7 @@ const TabItems = ({ key, onPress, onLongPress, label, isFocused }) => {
             onPress={onPress}
             onLongPress={onLongPress}
             style={styles.container}>
-            {/* <Icon /> */}
+            <Icon />
             <Text style={styles.text}>
                 {label}
             </Text>

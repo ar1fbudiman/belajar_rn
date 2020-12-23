@@ -3,7 +3,7 @@ import { StyleSheet, View } from 'react-native'
 import TabItems from '../TabItems';
 
 const BottomNavigator = ({ state, descriptors, navigation }) => {
-    const focusedOptions = descriptors[state.routes[state.index].key].options;
+  const focusedOptions = descriptors[state.routes[state.index].key].options;
 
   if (focusedOptions.tabBarVisible === false) {
     return null;
@@ -17,8 +17,8 @@ const BottomNavigator = ({ state, descriptors, navigation }) => {
           options.tabBarLabel !== undefined
             ? options.tabBarLabel
             : options.title !== undefined
-            ? options.title
-            : route.name;
+              ? options.title
+              : route.name;
 
         const isFocused = state.index === index;
 
@@ -42,13 +42,13 @@ const BottomNavigator = ({ state, descriptors, navigation }) => {
         };
 
         return (
-            <TabItems 
-                key={index}
-                onPress={onPress}
-                onLongPress={onLongPress}
-                label={label}
-                isFocused={isFocused}
-            />
+          <TabItems
+            key={index}
+            onPress={onPress}
+            onLongPress={onLongPress}
+            label={label}
+            isFocused={isFocused}
+          />
         )
       })}
     </View>
@@ -58,11 +58,11 @@ const BottomNavigator = ({ state, descriptors, navigation }) => {
 export default BottomNavigator
 
 const styles = StyleSheet.create({
-    container: {
-        flexDirection: 'row',
-        backgroundColor: '#FFF',
-        justifyContent: 'space-between',
-        paddingHorizontal: 55,
-        paddingVertical: 14
-    }
+  container: {
+    flexDirection: 'row',
+    backgroundColor: '#FFF',
+    justifyContent: 'space-between',
+    paddingHorizontal: 55,
+    paddingVertical: 14
+  }
 })

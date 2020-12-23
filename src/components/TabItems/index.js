@@ -1,6 +1,7 @@
 import React from 'react'
 import { StyleSheet, Text, TouchableOpacity, Icon } from 'react-native'
 import { Beranda, BerandaActive, Pesanan, PesananActive, Akun, AkunActive } from '../../assets'
+import { WARNA_ACTIVE, WARNA_DISABLE } from '../../utils'
 
 const TabItems = ({ key, onPress, onLongPress, label, isFocused }) => {
     const Icon = () => {
@@ -16,7 +17,7 @@ const TabItems = ({ key, onPress, onLongPress, label, isFocused }) => {
             onLongPress={onLongPress}
             style={styles.container}>
             <Icon />
-            <Text style={styles.text}>
+            <Text style={styles.text(isFocused)}>
                 {label}
             </Text>
         </TouchableOpacity>
@@ -26,10 +27,12 @@ const TabItems = ({ key, onPress, onLongPress, label, isFocused }) => {
 export default TabItems
 
 const styles = StyleSheet.create({
-    text: {
-        color: '#C8C8C8'
-    },
+    text: (isFocused) => ({
+        color: isFocused ? WARNA_ACTIVE : WARNA_DISABLE,
+        marginTop: 5
+        
+    }),
     container: {
-        flex: 1
+        alignItems: 'center'
     }
 })
